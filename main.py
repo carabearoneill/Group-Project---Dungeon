@@ -20,7 +20,6 @@ def main():
 
         user_input = interaction.get_user_command()
         should_continue = interaction.do_command(user_input)
-        # TODO: If should_continue is False then exit this loop.
         if should_continue == False: # LT 
             break
     screen.write_new_line()

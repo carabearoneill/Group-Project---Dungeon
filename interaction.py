@@ -66,17 +66,17 @@ def do_command(command):
             if player.is_open_space(player.x, player.y - 1):
                 player.y -= 1
         elif command == KEYBOARD_DOWN:
-            # TODO: Update the player's symbol so it is facing down.
-            # TODO: If the player can move down one square, then move the player down one square.
-            pass
+            player.set_symbol(player.LOOKING_DOWN)
+            if player.is_open_space(player.x, player.y + 1):
+                player.y += 1
         elif command == KEYBOARD_LEFT:
-            # TODO: Update the player's symbol so it is facing left.
-            # TODO: If the player can move left one square, then move the player left one square.
-            pass
+            player.set_symbol(player.LOOKING_LEFT)
+            if player.is_open_space(player.x - 1, player.y):
+                player.x -= 1
         elif command == KEYBOARD_RIGHT:
-            # TODO: Update the player's symbol so it is facing right.
-            # TODO: If the player can move right one square, then move the player right one square.
-            pass
+            player.set_symbol(player.LOOKING_RIGHT)
+            if player.is_open_space(player.x + 1, player.y):
+                player.x += 1
         elif command == KEYBOARD_LOOK:
             do_look(player.x, player.y, player.get_symbol())
         elif command == KEYBOARD_TAKE:
